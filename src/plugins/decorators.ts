@@ -1,7 +1,6 @@
 import fp from 'fastify-plugin'
 
 import { bootstrap } from 'fastify-decorators';
-// import {join} from 'node:path'
 
 export interface DecoratorsOptions {
 }
@@ -12,12 +11,9 @@ export interface DecoratorsOptions {
  * @see https://github.com/fastify/fastify-sensible
  */
 export default fp<DecoratorsOptions>(async (fastify) => {
-  // fastify.register(sensible)
-  console.dir(import.meta.url)
   fastify.register(bootstrap, {
-    
     // Specify directory with our handler,import.meta.url
-    directory: new URL(`../handlers`, import.meta.url),
+    directory: new URL(`../controllers`, import.meta.url),
   
     // Specify mask to match only our handler
     mask: /\.handler\./,
