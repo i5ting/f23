@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "npm run build:ts && tsc -p test/tsconfig.json && tap --ts \"test/**/*.test.ts\"",
-    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "start": "npm run build:ts && fastify start -d -l info dist/app.js",
     "build:ts": "tsc",
     "watch:ts": "tsc -w",
     "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
@@ -19,13 +19,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify-decorators/typedi": "^4.0.0-next.4",
     "@fastify/autoload": "^5.0.0",
     "@fastify/sensible": "^5.0.0",
+    "class-transformer": "^0.5.1",
     "desm": "^1.3.0",
     "fastify": "^4.0.0",
     "fastify-cli": "^5.7.1",
     "fastify-decorators": "^3.15.0",
-    "fastify-plugin": "^4.0.0"
+    "fastify-plugin": "^4.0.0",
+    "typedi": "^0.10.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
