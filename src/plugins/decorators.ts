@@ -6,9 +6,10 @@ export interface DecoratorsOptions {
 }
 
 /**
- * This plugins adds some utilities to handle http errors
+ * Set of Typescript decorators to build Fastify server 
+ * with controllers, services and hooks
  *
- * @see https://github.com/fastify/fastify-sensible
+ * @see https://github.com/L2jLiga/fastify-decorators
  */
 export default fp<DecoratorsOptions>(async (fastify) => {
   fastify.register(bootstrap, {
